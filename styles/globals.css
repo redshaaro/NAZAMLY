@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+*{
+box-sizing:border-box;
+padding:0;
+margin:0;
+}
+body{
+background-color:#D14D72;
+color:#FEF2F4;
+}
+ 

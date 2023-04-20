@@ -1,0 +1,31 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model ADMIN {
+  id        String  @id @default(cuid())
+  AdminName String  @unique
+  PassWord  String  @unique
+  venues    VENUE[]
+}
+
+model VENUE {
+  id          String  @id @default(cuid())
+  Name        String  @unique
+  Description String  @unique
+  Image       Bytes?
+  Capacity    Int
+  price       Decimal
+  Location    String
+  Available   Boolean @default(true)
+  admin_id    String?
+  admin       ADMIN?  @relation(fields: [admin_id], references: [id])
+}
