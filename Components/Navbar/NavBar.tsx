@@ -30,7 +30,7 @@ const Navbar = () => {
             </li>
             <li>
             <Link href={"#customers"}>
-                <h1 className='font-semibold text-purple-800 rounded-full'>JOIN US NOW!</h1>
+                <h1 className='font-semibold text-white p-4 bg-purple-900 rounded-full'>JOIN US NOW!</h1>
                 </Link>
             </li>
             
