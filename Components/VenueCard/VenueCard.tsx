@@ -1,15 +1,17 @@
 import Link from 'next/link'
 import React from 'react'
-interface CardProps{
-    Venue:{
-        title:string
-        imgurl:string
-        description:string
-        status:string
-    }[]
-}
-const VenueCard = () => {
+// interface CardProps{
+//     Venue:{
+//         title:string
+//         imgurl:string
+//         description:string
+//         status:string
+//     }[]
+// }
+
+const VenueCard = ({venues}) => {
     let id=1
+    console.log(venues)
   return (
     <div className='w-[300px] h-[350px] flex flex-col items-center bg-black rounded-xl'>
         <Link href={`places/${id}`}>
@@ -22,5 +24,6 @@ const VenueCard = () => {
     </div>
   )
 }
+
 
 export default VenueCard
