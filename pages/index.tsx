@@ -17,8 +17,7 @@ export const getStaticProps = async () => {
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home({venues}) {
-  console.log(venues)
   return <>
-{/* <VenueCard></VenueCard> */}
+<VenueCard venue={venues}></VenueCard>
   </>;
 }
