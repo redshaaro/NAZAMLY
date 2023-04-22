@@ -10,22 +10,22 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model ADMIN {
+model admin {
   id        String  @id @default(cuid())
   AdminName String  @unique
   PassWord  String  @unique
-  venues    VENUE[]
+  venues    venue[]
 }
 
-model VENUE {
+model venue {
   id          String  @id @default(cuid())
   Name        String  @unique
   Description String  @unique
-  Image       Bytes?
-  Capacity    Int
-  price       Decimal
+  Image       String?
+  Capacity    String
+  price      String
   Location    String
   Available   Boolean @default(true)
   admin_id    String?
-  admin       ADMIN?  @relation(fields: [admin_id], references: [id])
+  admin       admin?  @relation(fields: [admin_id], references: [id])
 }
