@@ -1,31 +1,22 @@
-import React from 'react'
-import prisma from '../../lib/prisma'
-export const getStaticProps=async()=>{
-  const venues=await prisma.venue.findMany({
-    where:{Available:true}
-  })
-  return{
-    props:{venues},
-    revalidate:10
-  }
+import React from "react";
+import prisma from "../../lib/prisma";
+export const getStaticProps = async () => {
+  const res = await fetch('http://localhost:3000/api/venues', { method: "GET" });
+  const venues = await res.json();
   
-   
+  return {
+    props: { venues },
+    revalidate: 10,
+  };
+};
 
-}
- 
-
-
-
-const AdminFeatures = ({venues}) => {
-  console.log(venues)
+const AdminFeatures = ({ venues }) => {
+  console.log(venues);
   return (
     <>
-    <h1 className='text-center text-4xl mt-4 '>Welcome Admin</h1>
-   
-
-
+      <h1 className="text-center text-4xl mt-4 ">Welcome Admin</h1>
     </>
-  )
-}
+  );
+};
 
-export default AdminFeatures
+export default AdminFeatures;
