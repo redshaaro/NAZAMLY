@@ -1,9 +1,6 @@
-
-import VenueCard from "@/Components/VenueCard/VenueCard";
 import { Inter } from "next/font/google";
-
-import Link from "next/link";
-import prisma from '@/lib/prisma'
+import Venues from "@/Components/Venues";
+import Hero from "@/Components/Hero";
 
 export const getStaticProps = async () => {
   const res = await fetch('http://localhost:3000/api/venues', { method: "GET" });
@@ -18,6 +15,8 @@ const inter = Inter({ subsets: ["latin"] });
 
 export default function Home({venues}) {
   return <>
-<VenueCard venue={venues}></VenueCard>
+  <Hero></Hero>
+  <Venues venue={venues}></Venues>
+
   </>;
 }
