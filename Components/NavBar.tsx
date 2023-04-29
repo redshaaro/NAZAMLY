@@ -7,7 +7,7 @@ const Navbar = () => {
         <Link href={"/"}>
         <aside className='font-bold text-2xl bg-gradient-to-b from-blue-500 to-purple-950 text-transparent bg-transparent bg-clip-text pl-2'>NAZAMLY</aside>
         </Link>
-        <ul className='flex items-center gap-5 mr-5'>
+        <ul className='flex items-center gap-5 mr-5 '>
             <li>
                 <Link href={"/events"}>
                 <h1  className='font-semibold '>Solutions</h1>
