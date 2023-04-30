@@ -22,7 +22,8 @@ margin:0;
 
   .blue__gradient {
     background: radial-gradient(circle, rgba(188, 165, 255, 0) 0%, #20dbd4 100%);
-    filter: blur(100px);
+    filter:
+     blur(100px);
   }
   .purple__gradient {
     background: radial-gradient(circle, rgba(188, 165, 255, 0) 0%, #3f51b6 100%);

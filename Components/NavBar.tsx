@@ -9,6 +9,11 @@ const Navbar = () => {
         </Link>
         <ul className='flex items-center gap-5 mr-5 '>
             <li>
+                <Link href={"/AdminFeatures"}>
+                <h1  className='font-semibold '>Dashboard</h1>
+                </Link>
+            </li>
+            <li>
                 <Link href={"/events"}>
                 <h1  className='font-semibold '>Solutions</h1>
                 </Link>
