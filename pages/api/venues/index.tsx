@@ -7,7 +7,6 @@ export default async function handler(req, res) {
     });
     res.status(200).json(data);
   } else if (req.method === "POST") {
-    
     const { Name, Description, Image, Capacity, price, Location, Available } =
       req.body;
     const result = await prisma.venue.create({
