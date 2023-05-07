@@ -1,45 +1,47 @@
 import React from "react";
 import Link from "next/link";
+import NavBar from "@/Components/NavBar";
 
 
 const SignUp = () => {
   return (
-    <div className="flex mt-20  p-6  justify-center shadow-lg h-[70vh] ">
-      <div className="left w-[50%]">
-        <h1 className="text-center text-xl font-bold ">
-          Enjoy Nazamly Features
+    <>
+    <NavBar color={'black'}></NavBar>
+    <div className="flex p-6 bg-regbg bg-cover bg-no-repeat justify-center  h-screen ">
+      <div className="mt-32 bg-white rounded-3xl p-10 h-fit ">
+        <h1 className="text-center text-3xl font-bold ">
+          Enjoy Nazamly Features & More
         </h1>
         <p className="text-center  text-lg mt-4">Sign Up</p>
         <form className="flex flex-col  p-3">
           <input
             type="text"
-            className="mb-5 focus:outline-none border-[#882ae2] text-lg rounded-lg border-2 p-[4px] text-[#882ae2]"
+            className="mb-5 focus:outline-none  border-b-2 text-lg  p-[4px]"
             placeholder="UserName"
           />
           <input
             type="text"
-            className="mb-5 focus:outline-none border-[#882ae2] text-lg rounded-lg border-2 p-[4px] text-[#882ae2]"
+            className="mb-5 focus:outline-none  border-b-2 text-lg  p-[4px]"
             placeholder="Email"
           />
           <input
             type="text"
-            className="mb-5 focus:outline-none border-[#882ae2] text-lg rounded-lg border-2 p-[4px] text-[#882ae2]"
+            className="mb-5 focus:outline-none border-b-2 text-lg  p-[4px]"
             placeholder="Password"
           />
           <input
             type="submit"
-            className="mb-2 bg-[#882ae2] p-2 rounded text-white text-xl cursor-pointer"
+            className="mb-2 bg-blue-950 p-2 rounded-full text-white text-xl cursor-pointer"
             placeholder="Create an account"
           />
         </form>
-      </div>
-      <div className="right flex flex-col items-center justify-center text-white text-[27px]  bg-[#882ae2] w-[50%] p-12 rounded">
-        <p className="font-[900] mb-8">Glade To see you !</p>
+        <div className="text-center">
+        <p className="font-semibold mb-2 w">Glad To see you !</p>
         <p>
           Already have an account?{" "}
           <Link href="/SignIn">
           <span
-            className="cursor-pointer"
+            className="cursor-pointer text-blue-950 font-bold"
              
           >
             SignIn
@@ -48,8 +50,12 @@ const SignUp = () => {
          
         </p>
       </div>
+      </div>
+     
     </div>
+    </>
   );
+
 };
 
 export default SignUp;

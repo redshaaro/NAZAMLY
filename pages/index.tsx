@@ -1,6 +1,6 @@
 import { Inter } from "next/font/google";
-import Venues from "@/Components/Venues";
 import Hero from "@/Components/Hero";
+import LowerHero from "@/Components/LowerHero";
 
 export const getStaticProps = async () => {
   const res = await fetch('http://localhost:3000/api/venues', { method: "GET" });
@@ -16,7 +16,6 @@ const inter = Inter({ subsets: ["latin"] });
 export default function Home({venues}) {
   return <>
   <Hero></Hero>
-  <Venues venue={venues}></Venues>
-
+  <LowerHero></LowerHero>
   </>;
 }
