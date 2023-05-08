@@ -1,8 +1,32 @@
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
-
+import { useRouter } from "next/router";
 
 const SignUp = () => {
+  const [UserName, setUserName] = useState("");
+  const [Email, setEmail] = useState("");
+  const [PassWord, setPassword] = useState("");
+  const router = useRouter();
+  const signUpHandler = async (e) => {
+    e.preventDefault();
+    try {
+      const data = {
+        UserName,
+        Email,
+        PassWord,
+      };
+
+      await fetch("http://localhost:3000/api/auth/signup", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+      router.push("/");
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   return (
     <div className="flex mt-20  p-6  justify-center shadow-lg h-[70vh] ">
       <div className="left w-[50%]">
@@ -10,21 +34,33 @@ const SignUp = () => {
           Enjoy Nazamly Features
         </h1>
         <p className="text-center  text-lg mt-4">Sign Up</p>
-        <form className="flex flex-col  p-3">
+        <form onSubmit={signUpHandler} className="flex flex-col  p-3">
           <input
             type="text"
             className="mb-5 focus:outline-none border-[#882ae2] text-lg rounded-lg border-2 p-[4px] text-[#882ae2]"
             placeholder="UserName"
+            value={UserName}
+            onChange={(e) => {
+              setUserName(e.target.value);
+            }}
           />
           <input
             type="text"
             className="mb-5 focus:outline-none border-[#882ae2] text-lg rounded-lg border-2 p-[4px] text-[#882ae2]"
             placeholder="Email"
+            value={Email}
+            onChange={(e) => {
+              setEmail(e.target.value);
+            }}
           />
           <input
             type="text"
             className="mb-5 focus:outline-none border-[#882ae2] text-lg rounded-lg border-2 p-[4px] text-[#882ae2]"
             placeholder="Password"
+            value={PassWord}
+            onChange={(e) => {
+              setPassword(e.target.value);
+            }}
           />
           <input
             type="submit"
@@ -38,14 +74,8 @@ const SignUp = () => {
         <p>
           Already have an account?{" "}
           <Link href="/SignIn">
-          <span
-            className="cursor-pointer"
-             
-          >
-            SignIn
-          </span>
+            <span className="cursor-pointer">SignIn</span>
           </Link>
-         
         </p>
       </div>
     </div>

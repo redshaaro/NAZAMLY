@@ -1,7 +1,24 @@
 import Link from "next/link";
-import React from "react";
+import { useRouter } from "next/dist/client/router";
+import { useEffect, useState } from "react";
 
 const Navbar = () => {
+  const [user, setUserState] = useState(null);
+  const router = useRouter();
+
+  useEffect(() => {
+    const userData = localStorage.getItem("user");
+    if (userData) {
+      setUserState(JSON.parse(userData));
+    }
+  }, []);
+
+  console.log(user);
+  const logout = () => {
+    localStorage.removeItem("user");
+    router.reload();
+  };
+
   return (
     <div className="flex items-center justify-between mt-3 ">
       <Link href={"/"}>
@@ -10,11 +27,13 @@ const Navbar = () => {
         </aside>
       </Link>
       <ul className="flex items-center gap-5 mr-5 ">
-        <li>
-          <Link href={"/AdminFeatures"}>
-            <h1 className="font-semibold ">Dashboard</h1>
-          </Link>
-        </li>
+        {user?.Role === "admin" && (
+          <li>
+            <Link href={"/AdminFeatures"}>
+              <h1 className="font-semibold ">Dashboard</h1>
+            </Link>
+          </li>
+        )}
         <li>
           <Link href={"/events"}>
             <h1 className="font-semibold ">Solutions</h1>
@@ -35,13 +54,21 @@ const Navbar = () => {
             <h1 className="font-semibold text-purple-800">Registration</h1>
           </Link>
         </li>
-        <li>
-          <Link href={"#customers"}>
-            <h1 className="font-semibold text-white p-4 bg-purple-900 rounded-full">
-              JOIN US NOW!
-            </h1>
-          </Link>
-        </li>
+
+        {user ? (
+          <li>
+            <button
+              onClick={() => {
+                logout();
+              }}
+              className="font-semibold text-white p-4 bg-purple-900 rounded-full"
+            >
+              Logout
+            </button>
+          </li>
+        ) : (
+          ""
+        )}
       </ul>
     </div>
   );
