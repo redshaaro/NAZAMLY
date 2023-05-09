@@ -1,8 +1,12 @@
 import React from "react";
 import Link from "next/link";
-import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
-import { useAppContext } from "../../context/appContext";
+
+import { useState } from "react";
+
+import NavBar from "@/Components/NavBar";
+import { useAppContext } from "@/context/appContext";
+import { error } from "console";
 
 const SignIn = () => {
   const [UserName, setUserName] = useState("");
@@ -24,61 +28,67 @@ const SignIn = () => {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
       });
-
-      const res = await user.json();
-
-      setUser(res);
-      localStorage.setItem("user", JSON.stringify(res)); // Save user object in local storage
-
-      await router.push("/"); //should wait for it
-      router.reload();
+      if (user.ok) {
+        const res = await user.json();
+        setUser(res);
+        localStorage.setItem("user", JSON.stringify(res)); // Save user object in local storage
+        await router.push("/"); //should wait for it
+      } else {
+        throw new Error("LogIn failed");
+      }
     } catch (err) {
       console.log(err);
     }
   };
 
   return (
-    <div className="flex mt-20  p-6  justify-center shadow-lg h-[70vh] ">
-      <div className="left w-[50%]">
-        <h1 className="text-center text-xl font-bold ">Welcome back!</h1>
-        <p className="text-center  text-lg mt-4">Login</p>
-        <form onSubmit={loginHandler} className="flex flex-col  p-3">
-          <input
-            type="text"
-            className="mb-5 focus:outline-none border-[#882ae2] text-lg rounded-lg border-2 p-[4px] text-[#882ae2]"
-            placeholder="UserName"
-            value={UserName}
-            onChange={(e) => {
-              setUserName(e.target.value);
-            }}
-          />
-
-          <input
-            type="text"
-            className="mb-5 focus:outline-none border-[#882ae2] text-lg rounded-lg border-2 p-[4px] text-[#882ae2]"
-            placeholder="Password"
-            value={PassWord}
-            onChange={(e) => {
-              setPassword(e.target.value);
-            }}
-          />
-          <input
-            type="submit"
-            className="mb-2 bg-[#882ae2] p-2 rounded text-white text-xl cursor-pointer"
-          />
-        </form>
+    <>
+      <NavBar color={"black"}></NavBar>
+      <div className="flex p-6 bg-signinbg bg-cover bg-no-repeat justify-center h-screen ">
+        <div className="mt-32 bg-white rounded-3xl p-10 h-fit ">
+          <h1 className="text-center text-3xl font-bold ">
+            Enjoy Nazamly Features & More
+          </h1>
+          <p className="text-center  text-lg mt-4">Sign Up</p>
+          <form onSubmit={loginHandler} className="flex flex-col  p-3">
+            <input
+              type="text"
+              className="mb-5 focus:outline-none  border-b-2 text-lg  p-[4px]"
+              placeholder="UserName"
+              value={UserName}
+              onChange={(e) => {
+                setUserName(e.target.value);
+              }}
+            />
+            <input
+              type="text"
+              className="mb-5 focus:outline-none border-b-2 text-lg  p-[4px]"
+              placeholder="Password"
+              value={PassWord}
+              onChange={(e) => {
+                setPassword(e.target.value);
+              }}
+            />
+            <input
+              type="submit"
+              className="mb-2 bg-blue-950 p-2 rounded-full text-white text-xl cursor-pointer"
+              placeholder="Create an account"
+            />
+          </form>
+          <div className="text-center">
+            <p className="font-semibold mb-2 w">Glad To see you !</p>
+            <p className="font-semibold">
+              New here ?{" "}
+              <Link href="/SignUp">
+                <span className="cursor-pointer text-blue-950 font-bold">
+                  Sign Up Now!
+                </span>
+              </Link>
+            </p>
+          </div>
+        </div>
       </div>
-      <div className="right flex flex-col items-center justify-center text-white text-[27px]  bg-[#882ae2] w-[50%] p-12 rounded">
-        <p className="font-[900] mb-8">Glade To see you again !</p>
-        <p>
-          Don't have an account?{" "}
-          <Link href="/SignUp">
-            {" "}
-            <span className="cursor-pointer">SignUp</span>
-          </Link>
-        </p>
-      </div>
-    </div>
+    </>
   );
 };
 
