@@ -11,7 +11,7 @@ const LowerHero = () => {
     <div className='bg-lowerhero brightness-75 bg-no-repeat bg-cover h-screen relative'>
      <p ref={secondRef} className='text-5xl left-[15%] top-[30%] text-white font-bold absolute'><span className={`${second ?"fade-in" : ""}`}>Our Vision:</span></p>
     </div>
-    <div className='bg-gray-950 h-[50vh] p-5'>
+    <div className='bg-gray-950 h-full p-5'>
     <h1 className={`text-center text-white font-bold text-4xl ${Third?"fade-in":""}`}>Meet Our Favourite Customers</h1>
       <ul ref={thirdRef} className={`flex gap-20 justify-between p-10 flex-wrap ${Third?"fade-in":""}`}>
         <li className={`p-5 `}>

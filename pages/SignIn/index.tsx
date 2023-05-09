@@ -34,7 +34,7 @@ const SignIn = () => {
         <p className="font-semibold mb-2 w">Glad To see you !</p>
         <p className="font-semibold">
          New here ?{" "}
-          <Link href="/SignIn">
+          <Link href="/SignUp">
           <span
             className="cursor-pointer text-blue-950 font-bold"
              

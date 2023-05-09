@@ -35,7 +35,7 @@ const NavBar = ({color}) => {
             </li>
             <li>
             <Link href={"SignUp"}>
-                <h1 className='font-semibold text-white p-4 bg-blue-950 rounded-full'>JOIN US NOW!</h1>
+                <h1 className='font-semibold text-white p-3 bg-blue-950 rounded-full'>JOIN US NOW!</h1>
                 </Link>
             </li>
             
