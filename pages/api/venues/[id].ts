@@ -10,12 +10,12 @@ export default async function handle(req, res) {
         const venues = await prisma.venue.update({
             where: { id: id },
             data: {
-                Name: Name||undefined,
-                Description: Description||undefined,
-                Image: Image||undefined,
-                Capacity: Capacity||undefined,
-                price: price||undefined,
-                Location: Location||undefined,
+                Name: Name || undefined,
+                Description: Description || undefined,
+                Image: Image || undefined,
+                Capacity: Capacity || undefined,
+                price: price || undefined,
+                Location: Location || undefined,
                 Available: Available,
             },
 

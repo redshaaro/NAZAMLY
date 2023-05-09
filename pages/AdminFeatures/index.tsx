@@ -62,9 +62,7 @@ const AdminFeatures = ({ venues }) => {
               <p className=" text-white text-xl mt-1  font-semibold">
                 {item.Name}
               </p>
-              <p className="mx-3 text-white mt-1  text-md ">
-                {item.Description}
-              </p>
+              
 
               <p className="ml-2 text-white mt-1  text-lg">
                 {isAvailable ? "AVAILABLE" : "NOT AVAILABLE"}
