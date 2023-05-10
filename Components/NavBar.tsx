@@ -64,32 +64,26 @@ const NavBar = ({ color }) => {
           </Link>
         </li>
         {!user ? (
-          <li>
-            <Link href={"/SignUp"}>
-              <h1 className="font-semibold text-white p-4 bg-blue-950 rounded-full">
-                JOIN US NOW!
-              </h1>
-            </Link>
-          </li>
+          <>
+            <li>
+              <Link href={"/SignUp"}>
+                <h1 className='font-bold'>Registration</h1>
+              </Link>
+            </li>
+            <li>
+              <Link href={"SignUp"}>
+                <h1 className='font-semibold text-white p-4 bg-blue-950 rounded-full'>JOIN US NOW!</h1>
+              </Link>
+            </li>
+          </>
         ) : (
-          ""
-        )}
-        {user ? (
           <li>
-            <button
-              onClick={() => {
-                logout();
-              }}
-              className="font-semibold text-white p-4 bg-purple-900 rounded-full"
-            >
-              Logout
-            </button>
+            <button onClick={logout}>Logout</button>
           </li>
-        ) : (
-          ""
         )}
       </ul>
     </div>
   );
 };
+
 export default NavBar;

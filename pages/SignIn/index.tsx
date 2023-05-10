@@ -3,10 +3,10 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 
 import { useState } from "react";
+import { useAppContext } from "@/context/appContext";
 
 import NavBar from "@/Components/NavBar";
-import { useAppContext } from "@/context/appContext";
-import { error } from "console";
+
 
 const SignIn = () => {
   const [UserName, setUserName] = useState("");
