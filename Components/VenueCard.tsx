@@ -3,18 +3,17 @@ import React from 'react'
 import { CardProps } from '@/utils/interfaces'
 const VenueCard = ({venue}:CardProps) => {
   return (
-    <div className='w-[300px] h-[350px] flex flex-col items-center bg-black rounded-xl'>
-    {venue.map((place)=>
-    <>
-        <Link href={`places/${place.id}`}>
-        <img src={place.Image} alt="a photo for the event" className='rounded-lg' />
+    <div className='w-[300px] h-full bg-black rounded-xl'>
+  
+        <Link href={`places/${venue.id}`}>
+        <img src={venue.Image} alt="a photo for the event" className='rounded-lg' />
         </Link>
-        <h1 className='text-white text-xl   font-semibold'>{place.Name}</h1>
-        <h1  className='mx-3 text-white   text-md '> {place.Description}</h1>
-        <h1 className='ml-2 text-white text-lg'>Status:{place.Available}</h1>
-        <button className='text-white p-4 bg-purple-950 rounded-full mt-2'>Explore {place.Name}</button>
-        </>
-        )}
+        <h1 className='text-white text-xl text-center font-semibold'>{venue.Name}</h1>
+        <h1  className='mx-3 text-white   text-md '> {venue.Description.substring(0,50)}...</h1>
+        <h1 className='ml-2 text-white text-lg'>Status: {venue.Available ? "Available":"not Avaliable"}</h1>
+        <button className='text-white p-4 bg-blue-950 rounded-full mt-2 mb-5 ml-5'>Explore {venue.Name}</button>
+      
+    
     </div>
   )
 }

@@ -19,7 +19,9 @@ const NavBar = ({ color }) => {
     router.reload();
   };
   return (
-    <div className="flex items-center justify-between p-4 z-10 bg-transparent border-b-[0.1px] border-gray-700">
+    <div className={`flex items-center justify-between p-4 z-10 bg-transparent border-b-[0.1px] ${
+      color ? "border-gray-200" : "border-gray-700"
+    }`}>
       <Link href={"/"}>
         <aside
           className={`font-bold text-2xl bg-gradient-to-b from-white ${
@@ -80,7 +82,7 @@ const NavBar = ({ color }) => {
               onClick={() => {
                 logout();
               }}
-              className="font-semibold text-white p-4 bg-purple-900 rounded-full"
+              className="font-semibold text-white p-4 bg-blue-950 rounded-full"
             >
               Logout
             </button>
