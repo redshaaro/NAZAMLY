@@ -31,7 +31,7 @@ const SignUp = () => {
       setLoading(true);
 
       if (checkempty(data.UserName, data.PassWord, data.Email)) {
-        const response = await fetch("http://localhost:3000/api/auth/signup", {
+        const response = await fetch("https://nazamly.vercel.app/api/auth/signup", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(data),

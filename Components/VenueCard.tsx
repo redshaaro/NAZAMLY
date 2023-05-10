@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import React from 'react'
-import { CardProps } from '@/utils/interfaces'
-const VenueCard = ({venue}:CardProps) => {
+
+const VenueCard = ({venue}) => {
   return (
     <div className='w-[300px] h-full bg-black rounded-xl'>
   

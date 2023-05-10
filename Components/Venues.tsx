@@ -1,8 +1,8 @@
 import Link from 'next/link'
 import React from 'react'
-import { CardProps } from '@/utils/interfaces'
+ 
 
-const Venues = ({venue}:CardProps) => {
+const Venues = ({venue}) => {
   return (
     <section className='bg-black border-t-2  border-gray-900'>
     <h1 className='text-3xl font-semibold text-white ml-3 mt-3 '>View our Venues : </h1>

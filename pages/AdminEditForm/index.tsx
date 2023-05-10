@@ -18,7 +18,7 @@ const AdminEditForm = ({id}) => {
        
       console.log(data);
 
-      await fetch(`http://localhost:3000/api/venues/${id}`, {
+      await fetch(`https://nazamly.vercel.app/api/venues/${id}`, {
         method: "PUT",
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data)

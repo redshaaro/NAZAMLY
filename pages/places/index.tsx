@@ -4,7 +4,7 @@ import NavBar from "@/Components/NavBar";
 import { CardProps } from "@/utils/interfaces";
 
 export async function getStaticProps() {
-  const res = await fetch("http://localhost:3000/api/venues", {
+  const res = await fetch("https://nazamly.vercel.app/api/venues", {
     method: "GET",
   });
   const venues = await res.json();
@@ -14,13 +14,13 @@ export async function getStaticProps() {
     },
   };
 }
-const Index = ({ venues }: CardProps) => {
+const Index = ({ venues }) => {
   const [price, setPrice] = useState("");
   const [location, setLocation] = useState("");
   const [filtered, setFiltered] = useState<CardProps>();
   const filter = async (price, location) => {
     const res = await fetch(
-      `http://localhost:3000/api/venues/filter/?location=${location}&price=${price}$`,
+      `https://nazamly.vercel.app/api/venues/filter/?location=${location}&price=${price}$`,
       {
         method: "GET",
       }
@@ -81,7 +81,7 @@ const Index = ({ venues }: CardProps) => {
       </ul>
       <div className="flex justify-between items-center flex-wrap p-6 mt-3">
         <ul className="flex flex-col md:flex-row gap-5 justify-center">
-          {venuesToRender.map((venue: CardProps["venue"]) => (
+          {venuesToRender?.map((venue) => (
             <li key={venue.id}>
               <VenueCard venue={venue}></VenueCard>
             </li>

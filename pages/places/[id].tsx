@@ -9,7 +9,10 @@ const EventId = () => {
   const [startDate, setStartDate] = useState(new Date());
   const router = useRouter();
   const { id } = router.query;
-  const fetchPlace = useSWR(`http://localhost:3000/api/venues/${id}`, fetcher);
+  const fetchPlace = useSWR(
+    `https://nazamly.vercel.app/api/venues/${id}`,
+    fetcher
+  );
   if (fetchPlace.error) return <div>{fetchPlace.error}</div>;
 
   if (fetchPlace.isLoading)
@@ -21,7 +24,7 @@ const EventId = () => {
         </h1>
       </div>
     );
-    const { data} = fetchPlace as VenueProps;
+  const { data } = fetchPlace as VenueProps;
   if (data)
     return (
       <div className=" h-[full] mb-7">
@@ -30,7 +33,7 @@ const EventId = () => {
           <h1 className="pt-5  text-3xl font-semibold">{data.Name}</h1>
           <h1 className="pl-5 mt-2 text-base font-semibold">{data.Location}</h1>
           <div className="flex gap-3  mb-5">
-              {/* map images from db after adding new imgs */}
+            {/* map images from db after adding new imgs */}
             <img
               className="rounded-l-3xl rounded-br-3xl w-[60%] mt-5 "
               src={data.Image}
@@ -50,15 +53,32 @@ const EventId = () => {
             </div>
           </div>
           <div className="p-8">
-          <div className="absolute   right-[15.5%] w-[25%] bg-white mb-5  shadow-gray-800 shadow-sm rounded-2xl text-center border-2 p-7">
-            <p className="m-2"><span className="text-2xl">{data.price}</span>/  Event</p>
-            <label htmlFor="date">Select The Date</label>
-            <DatePicker id="date" selected={startDate} onChange={(date) => setStartDate(date)} className="border-2 rounded-full p-2 text-center" ></DatePicker>
-              <button className="p-3 font-bold text-white bg-green-700 rounded mt-4">Proceed to Payment</button>
+            <div className="absolute   right-[15.5%] w-[25%] bg-white mb-5  shadow-gray-800 shadow-sm rounded-2xl text-center border-2 p-7">
+              <p className="m-2">
+                <span className="text-2xl">{data.price}</span>/ Event
+              </p>
+              <label htmlFor="date">Select The Date</label>
+              <DatePicker
+                id="date"
+                selected={startDate}
+                onChange={(date) => setStartDate(date)}
+                className="border-2 rounded-full p-2 text-center"
+              ></DatePicker>
+              <button className="p-3 font-bold text-white bg-green-700 rounded mt-4">
+                Proceed to Payment
+              </button>
             </div>
-           <p className="border-b-2 pb-4 w-[50%]">{data.Description}</p> 
-           <h1 className='m-2 text-lg'>Status: <span className={`${data.Available ? "text-green-500":"text-red-500"}`}>{data.Available ? "Available":"not Avaliable"}</span></h1>
-           
+            <p className="border-b-2 pb-4 w-[50%]">{data.Description}</p>
+            <h1 className="m-2 text-lg">
+              Status:{" "}
+              <span
+                className={`${
+                  data.Available ? "text-green-500" : "text-red-500"
+                }`}
+              >
+                {data.Available ? "Available" : "not Avaliable"}
+              </span>
+            </h1>
           </div>
         </div>
       </div>

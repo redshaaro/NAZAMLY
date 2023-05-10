@@ -5,7 +5,7 @@ import AdminEditForm from "../AdminEditForm";
 import { CardProps } from "@/utils/interfaces";
 
 export const getStaticProps = async () => {
-  const res = await fetch("http://localhost:3000/api/venues", {
+  const res = await fetch("https://nazamly.vercel.app/api/venues", {
     method: "GET",
   });
   const venues = await res.json();
@@ -20,7 +20,7 @@ const AdminFeatures = ({ venues }:CardProps) => {
   const buttonHandler = async (action, id?) => {
     switch (action) {
       case "DELETE":
-        await fetch(`http://localhost:3000/api/venues/${id}`, {
+        await fetch(`https://nazamly.vercel.app/api/venues/${id}`, {
           method: "DELETE",
         });
         location.reload();
@@ -46,7 +46,7 @@ const AdminFeatures = ({ venues }:CardProps) => {
         </Link>
       </div>
       <div className="flex mt-[7rem] justify-around flex-wrap p-4  ">
-        {venues.map((item) => {
+        {venues?.map((item) => {
           const [isAvailable, setIsAvailable] = useState(item.Available);
           return (
             <div
