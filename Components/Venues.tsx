@@ -7,7 +7,7 @@ const Venues = ({venue}) => {
     <section className='bg-black border-t-2  border-gray-900'>
     <h1 className='text-3xl font-semibold text-white ml-3 mt-3 '>View our Venues : </h1>
     <div className='flex flex-wrap gap-5 m-5'>
-{venue.map((place)=>
+{venue?.map((place)=>
     <div key={place.id} className='w-[300px] h-[350px] flex flex-col items-center bg-white rounded-xl'>
         <Link href={`places/${place.id}`}>
         <img src={place.Image} alt="a photo for the event" className='rounded-lg h-[168px] w-[300px]' />
