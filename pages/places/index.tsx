@@ -1,37 +1,20 @@
 import VenueCard from "@/Components/VenueCard";
 import { Card, CardMedia, CardContent, Typography } from "@mui/material";
+
+import useSWR from "swr";
 import { useState } from "react";
 import Link from "next/dist/client/link";
 import NavBar from "@/Components/NavBar";
+import { filter } from "@/lib/filter";
 
-export async function getStaticProps() {
-  const res = await fetch("http://localhost:3000/api/venues", {
-    method: "GET",
-  });
-  const venues = await res.json();
-  return {
-    props: {
-      venues,
-    },
-  };
-}
+const Index = () => {
+  const url = process.env.NEXT_PUBLIC_API_URL;
+  const { data: venues, error } = useSWR(`${url}/venues`);
 
-const Index = ({ venues }) => {
   const [price, setPrice] = useState("");
   const [location, setLocation] = useState("");
   const [filtered, setFiltered] = useState([]);
 
-  const filter = async (price, location) => {
-    const res = await fetch(
-      `http://localhost:3000/api/venues/filter/?location=${location}&price=${price}$`,
-      {
-        method: "GET",
-      }
-    );
-    const filtered = await res.json();
-    setFiltered(filtered);
-    console.log(filtered);
-  };
   let venuesToRender = filtered.length ? filtered : venues;
 
   return (
@@ -42,7 +25,7 @@ const Index = ({ venues }) => {
         value={location}
         onChange={(event) => {
           setLocation(event.target.value);
-          filter(price, event.target.value);
+          filter(price, event.target.value, setFiltered);
         }}
       >
         <option value="">All</option>
@@ -56,7 +39,7 @@ const Index = ({ venues }) => {
         onChange={(event) => {
           setPrice(event.target.value);
 
-          filter(event.target.value, location);
+          filter(event.target.value, location, setFiltered);
         }}
       >
         <option value="">All</option>
@@ -65,7 +48,7 @@ const Index = ({ venues }) => {
         <option value="100">100$</option>
       </select>
       <div className="flex justify-between items-center flex-wrap p-6 mt-3">
-        {venuesToRender.map((venue) => (
+        {venuesToRender?.map((venue) => (
           <Card sx={{ width: 200, height: 300 }} key={venue.id}>
             <CardMedia
               sx={{ height: 140 }}
