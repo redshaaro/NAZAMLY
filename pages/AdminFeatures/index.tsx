@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import prisma from "../../lib/prisma";
 import Link from "next/link";
 import AdminEditForm from "../AdminEditForm";
+import { CardProps } from "@/utils/interfaces";
 
 export const getStaticProps = async () => {
   const res = await fetch("http://localhost:3000/api/venues", {
@@ -14,7 +15,7 @@ export const getStaticProps = async () => {
   };
 };
 
-const AdminFeatures = ({ venues }) => {
+const AdminFeatures = ({ venues }:CardProps) => {
   const [open, setOpen] = useState(null);
   const buttonHandler = async (action, id?) => {
     switch (action) {

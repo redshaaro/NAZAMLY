@@ -13,7 +13,7 @@ const LowerHero = () => {
       <div className="bg-lowerhero brightness-75 bg-no-repeat bg-cover h-screen relative">
         <p
           ref={secondRef}
-          className="text-5xl left-[15%] top-[30%] text-white font-bold absolute"
+          className="text-5xl p-7 left-[10%] top-[30%] text-white font-bold absolute"
         >
           <span
             className={`${
@@ -26,12 +26,7 @@ const LowerHero = () => {
             planning, organizing and managing events of all sizes. Our vision is
             to provide a comprehensive platform that brings together event
             planners, vendors, and attendees, allowing them to seamlessly
-            collaborate and communicate with each other. With our website, users
-            can easily search for and book venues, vendors, and other
-            event-related services, as well as manage guest lists, track RSVPs,
-            and more. Our goal is to make event planning stress-free and
-            enjoyable, by providing an all-in-one solution that saves time and
-            maximizes efficiency.
+            collaborate and communicate with each other. 
           </span>
         </p>
       </div>

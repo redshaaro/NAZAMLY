@@ -36,7 +36,7 @@ export default async function handle(req, res) {
         res.status(200).json(venue)
     }
     else if (req.method === "GET") {
-        const venue = await prisma.venue.findMany({
+        const venue = await prisma.venue.findUnique({
             where: { id: id }
         })
         res.status(200).json(venue)
