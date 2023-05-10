@@ -24,8 +24,8 @@ const NavBar = ({ color }) => {
     }`}>
       <Link href={"/"}>
         <aside
-          className={`font-bold text-2xl bg-gradient-to-b from-white ${
-            color ? "to-black" : "to-blue-100"
+          className={`font-bold text-2xl bg-gradient-to-b ${  
+            color ? "from-black to-black" : "from-white to-blue-500"
           }  text-transparent bg-clip-text pl-2`}
         >
           NAZAMLY

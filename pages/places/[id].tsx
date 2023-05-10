@@ -50,10 +50,10 @@ const EventId = () => {
             </div>
           </div>
           <div>
-          <div className="absolute  right-[15.5%] bg-white mb-5  shadow-gray-800 shadow-sm rounded-2xl text-center border-2 p-7">
-            <h1 className="m-2"><span className="text-2xl">{data.price}</span>/  Event</h1>
-            <p >Select the Date 
-              <DatePicker selected={startDate} onChange={(date) => setStartDate(date)} className="border-2 rounded-full pl-3 p-2" ></DatePicker></p>
+          <div className="absolute  right-[15.5%] w-[25%] bg-white mb-5  shadow-gray-800 shadow-sm rounded-2xl text-center border-2 p-7">
+            <p className="m-2"><span className="text-2xl">{data.price}</span>/  Event</p>
+            <label htmlFor="date">Select The Date</label>
+            <DatePicker id="date" selected={startDate} onChange={(date) => setStartDate(date)} className="border-2 rounded-full p-2 text-center" ></DatePicker>
               <button className="p-3 font-bold text-white bg-green-700 rounded mt-4">Proceed to Payment</button>
             </div>
            <p className="border-b-2 pb-4 w-[50%]">{data.Description}</p> 
