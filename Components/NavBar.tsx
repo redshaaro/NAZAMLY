@@ -24,8 +24,8 @@ const NavBar = ({ color }) => {
     }`}>
       <Link href={"/"}>
         <aside
-          className={`font-bold text-2xl bg-gradient-to-b from-white ${
-            color ? "to-black" : "to-blue-100"
+          className={`font-bold text-2xl bg-gradient-to-b ${  
+            color ? "from-black to-black" : "from-white to-blue-500"
           }  text-transparent bg-clip-text pl-2`}
         >
           NAZAMLY
@@ -67,11 +67,7 @@ const NavBar = ({ color }) => {
         </li>
         {!user ? (
           <>
-            <li>
-              <Link href={"/SignUp"}>
-                <h1 className='font-bold'>Registration</h1>
-              </Link>
-            </li>
+           
             <li>
               <Link href={"SignUp"}>
                 <h1 className='font-semibold text-white p-4 bg-blue-950 rounded-full'>JOIN US NOW!</h1>

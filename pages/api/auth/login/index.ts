@@ -1,7 +1,7 @@
 import prisma from "@/lib/prisma";
 import compare from '../../../../lib/compare'
 
-// login
+
 export default async function handler(req, res) {
     if (req.method === "POST") {
         try {

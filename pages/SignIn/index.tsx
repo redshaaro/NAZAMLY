@@ -4,14 +4,23 @@ import { useRouter } from "next/router";
 
 import { useState } from "react";
 import { useAppContext } from "@/context/appContext";
+import {
+  checkemptyLogin,
+  checkuser,
+  checkpassword,
+} from "../../lib/validation";
 
 import NavBar from "@/Components/NavBar";
-
 
 const SignIn = () => {
   const [UserName, setUserName] = useState("");
 
   const [PassWord, setPassword] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [uerr, setuerr] = useState(false);
+  const [eerr, seteerr] = useState(false);
+  const [perr, setperr] = useState(false);
+  const [rep, setRep] = useState(false);
   const router = useRouter();
   const { setUser } = useAppContext();
 
@@ -19,22 +28,37 @@ const SignIn = () => {
     e.preventDefault();
     try {
       const data = {
-        UserName,
-        PassWord,
+        UserName: UserName.trim(),
+        PassWord: PassWord.trim(),
       };
+      setLoading(true);
 
-      const user = await fetch("http://localhost:3000/api/auth/login", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
-      });
-      if (user.ok) {
-        const res = await user.json();
-        setUser(res);
-        localStorage.setItem("user", JSON.stringify(res)); // Save user object in local storage
-        await router.push("/"); //should wait for it
+      if (checkemptyLogin(UserName, PassWord)) {
+        const user = await fetch("http://localhost:3000/api/auth/login", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(data),
+        });
+        if (user.ok) {
+          const res = await user.json();
+          setUser(res);
+          setLoading(false);
+          localStorage.setItem("user", JSON.stringify(res)); // Save user object in local storage
+          await router.push("/"); //should wait for it
+        } else {
+          setRep(true);
+          setLoading(false);
+          throw new Error("LogIn failed");
+        }
       } else {
-        throw new Error("LogIn failed");
+        setLoading(false);
+
+        if (!checkuser(data.UserName)) {
+          setuerr(true);
+        }
+        if (checkpassword(data.PassWord)) {
+          setperr(true);
+        }
       }
     } catch (err) {
       console.log(err);
@@ -49,8 +73,15 @@ const SignIn = () => {
           <h1 className="text-center text-3xl font-bold ">
             Enjoy Nazamly Features & More
           </h1>
-          <p className="text-center  text-lg mt-4">Sign Up</p>
+          <p className="text-center  text-lg mt-4">Sign in</p>
           <form onSubmit={loginHandler} className="flex flex-col  p-3">
+            {uerr ? (
+              <p className="text-red-600 text-lg">
+                please enter your user name
+              </p>
+            ) : (
+              ""
+            )}
             <input
               type="text"
               className="mb-5 focus:outline-none  border-b-2 text-lg  p-[4px]"
@@ -60,8 +91,13 @@ const SignIn = () => {
                 setUserName(e.target.value);
               }}
             />
+            {perr ? (
+              <p className="text-red-600 text-lg">please enter your password</p>
+            ) : (
+              ""
+            )}
             <input
-              type="text"
+              type="password"
               className="mb-5 focus:outline-none border-b-2 text-lg  p-[4px]"
               placeholder="Password"
               value={PassWord}
@@ -69,11 +105,24 @@ const SignIn = () => {
                 setPassword(e.target.value);
               }}
             />
-            <input
-              type="submit"
-              className="mb-2 bg-blue-950 p-2 rounded-full text-white text-xl cursor-pointer"
-              placeholder="Create an account"
-            />
+            {loading ? (
+              <p className="text-center mb-2 bg-blue-950 p-2 rounded-full text-white text-xl">
+                Loading
+              </p>
+            ) : (
+              <input
+                type="submit"
+                className="mb-2 bg-blue-950 p-2 rounded-full text-white text-xl cursor-pointer"
+                placeholder="Create an account"
+              />
+            )}
+            {rep ? (
+              <p className="text-red-600 text-lg">
+                Incorrect username or password
+              </p>
+            ) : (
+              ""
+            )}
           </form>
           <div className="text-center">
             <p className="font-semibold mb-2 w">Glad To see you !</p>
