@@ -14,7 +14,7 @@ import { CardProps } from "@/utils/interfaces";
 //     },
 //   };
 // }
-const Index = ({ venues }: CardProps) => {
+const Index = ( ) => {
   const [price, setPrice] = useState("");
   const [location, setLocation] = useState("");
   const [filtered, setFiltered] = useState<CardProps>();
@@ -28,7 +28,7 @@ const Index = ({ venues }: CardProps) => {
     const filtered = await res.json();
     setFiltered(filtered);
   };
-  let venuesToRender = filtered?.length ? filtered : venues;
+  // let venuesToRender = filtered?.length ? filtered : venues;
   return (
     <div>
       <NavBar color={"black"}></NavBar>

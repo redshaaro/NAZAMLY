@@ -15,7 +15,7 @@ import { CardProps } from "@/utils/interfaces";
 //   };
 // };
 
-const AdminFeatures = ({ venues }: CardProps) => {
+const AdminFeatures = ( ) => {
   const [open, setOpen] = useState(null);
   const buttonHandler = async (action, id?) => {
     switch (action) {
