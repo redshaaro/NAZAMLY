@@ -1,23 +1,20 @@
 import VenueCard from "@/Components/VenueCard";
 import { useState } from "react";
 import NavBar from "@/Components/NavBar";
-import { CardProps } from "@/utils/interfaces";
+import prisma from "@/lib/prisma";
 
 export async function getStaticProps() {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/venues/`, {
-    method: "GET",
-  });
-  const venues = await res.json();
+  const venues = await prisma.venue.findMany()
   return {
     props: {
       venues,
     },
   };
 }
-const Index = ({ venues }: CardProps) => {
+const Index = ({ venues }) => {
   const [price, setPrice] = useState("");
   const [location, setLocation] = useState("");
-  const [filtered, setFiltered] = useState<CardProps>();
+  const [filtered, setFiltered] = useState([]);
   const filter = async (price, location) => {
     const res = await fetch(
       `/api/venues/filter/?location=${location}&price=${price}$`,
@@ -81,11 +78,11 @@ const Index = ({ venues }: CardProps) => {
       </ul>
       <div className="flex justify-between items-center flex-wrap p-6 mt-3">
         <ul className="flex flex-col md:flex-row gap-5 justify-center">
-          {venuesToRender.map((venue: CardProps["venue"]) => (
-            <li key={venue.id}>
-              <VenueCard venue={venue}></VenueCard>
-            </li>
-          ))}
+        {venuesToRender.map((venue) => (
+          <li key={venue.id}>
+            <VenueCard venue={venue}></VenueCard>
+          </li>
+        ))}
         </ul>
       </div>
     </div>

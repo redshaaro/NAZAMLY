@@ -1,14 +1,10 @@
 import React, { useState } from "react";
-import { useRouter } from "next/router";
-
 const AdminEditForm = ({id}) => {
   const [Name, setName] = useState("");
   const [Description, setDescription] = useState("");
   const [Capacity, setCapacity] = useState("");
   const [price, setPrice] = useState("");
   const [Location, setLocation] = useState("");
-
-  const router = useRouter();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
