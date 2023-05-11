@@ -3,17 +3,17 @@ import { useState } from "react";
 import NavBar from "@/Components/NavBar";
 import { CardProps } from "@/utils/interfaces";
 
-// export async function getStaticProps() {
-//   const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/venues/`, {
-//     method: "GET",
-//   });
-//   const venues = await res.json();
-//   return {
-//     props: {
-//       venues,
-//     },
-//   };
-// }
+export async function getStaticProps() {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/venues/`, {
+    method: "GET",
+  });
+  const venues = await res.json();
+  return {
+    props: {
+      venues,
+    },
+  };
+}
 const Index = ( ) => {
   const [price, setPrice] = useState("");
   const [location, setLocation] = useState("");
@@ -28,7 +28,7 @@ const Index = ( ) => {
     const filtered = await res.json();
     setFiltered(filtered);
   };
-  // let venuesToRender = filtered?.length ? filtered : venues;
+  let venuesToRender = filtered?.length ? filtered : venues;
   return (
     <div>
       <NavBar color={"black"}></NavBar>
@@ -81,11 +81,11 @@ const Index = ( ) => {
       </ul>
       <div className="flex justify-between items-center flex-wrap p-6 mt-3">
         <ul className="flex flex-col md:flex-row gap-5 justify-center">
-          {/* {venuesToRender.map((venue: CardProps["venue"]) => (
+          {venuesToRender.map((venue: CardProps["venue"]) => (
             <li key={venue.id}>
               <VenueCard venue={venue}></VenueCard>
             </li>
-          ))} */}
+          ))}
         </ul>
       </div>
     </div>
