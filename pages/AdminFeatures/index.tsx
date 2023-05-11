@@ -5,7 +5,9 @@ import AdminEditForm from "../AdminEditForm";
 import { CardProps } from "@/utils/interfaces";
 
 export const getStaticProps = async () => {
-  const venues = await prisma.venue.findMany();
+  const venues = await fetch("https://nazamly.vercel.app/api/venues", {
+    method: "GET",
+  });
 
   return {
     props: { venues },
@@ -17,7 +19,7 @@ const AdminFeatures = ({ venues }: CardProps) => {
   const buttonHandler = async (action, id?) => {
     switch (action) {
       case "DELETE":
-        await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/venues/${id}`, {
+        await fetch(`https://nazamly.vercel.app/api/venues/${id}`, {
           method: "DELETE",
         });
         location.reload();

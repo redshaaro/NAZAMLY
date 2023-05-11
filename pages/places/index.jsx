@@ -4,7 +4,7 @@ import NavBar from "@/Components/NavBar";
 import prisma from "@/lib/prisma";
 
 export async function getStaticProps() {
-  const venues = await prisma.venue.findMany()
+  const venues = await fetch("https://nazamly.vercel.app/api/venues",{method:"GET"})
   return {
     props: {
       venues,
@@ -17,7 +17,7 @@ const Index = ({ venues }) => {
   const [filtered, setFiltered] = useState([]);
   const filter = async (price, location) => {
     const res = await fetch(
-      `/api/venues/filter/?location=${location}&price=${price}$`,
+      `https://nazamly.vercel.app/api/venues/filter/?location=${location}&price=${price}$`,
       {
         method: "GET",
       }
