@@ -5,7 +5,7 @@ import AdminEditForm from "../AdminEditForm";
 import { CardProps } from "@/utils/interfaces";
 
 export const getStaticProps = async () => {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/venues`, {
+  const res = await fetch(`/api/venues`, {
     method: "GET",
   });
   const venues = await res.json();
@@ -20,7 +20,7 @@ const AdminFeatures = ({ venues }:CardProps) => {
   const buttonHandler = async (action, id?) => {
     switch (action) {
       case "DELETE":
-        await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/venues/${id}`, {
+        await fetch(`/api/venues/${id}`, {
           method: "DELETE",
         });
         location.reload();
