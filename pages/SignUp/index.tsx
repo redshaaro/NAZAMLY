@@ -29,17 +29,13 @@ const SignUp = () => {
         PassWord: PassWord.trim(),
       };
 
-      if (
-        checkempty(data.UserName) ||
-        checkempty(data.Email) ||
-        checkempty(data.PassWord)
-      ) {
+      if (checkempty(data.UserName, data.PassWord, data.Email)) {
         setLoading(false);
         throw new Error("Sign up failed");
       } else {
         if (
-          checkemail(data.Email) &&
-          checkuser(data.UserName) &&
+          checkemail(data.Email) ||
+          checkuser(data.UserName) ||
           checkpassword(data.PassWord)
         ) {
           setLoading(true);
@@ -52,18 +48,20 @@ const SignUp = () => {
             }
           );
 
-      if (response.ok) {
-        router.push("/SignIn"); // Redirect to login page if response is success
-      } else {
-        setLoading(false);
-        if (!checkemail(data.Email)) {
-          seteerr(true);
-        }
-        if (!checkuser(data.UserName)) {
-          setuerr(true);
-        }
-        if (checkpassword(data.PassWord)) {
-          setperr(true);
+          if (response.ok) {
+            router.push("/SignIn"); // Redirect to login page if response is success
+          }
+        } else {
+          setLoading(false);
+          if (!checkemail(data.Email)) {
+            seteerr(true);
+          }
+          if (!checkuser(data.UserName)) {
+            setuerr(true);
+          }
+          if (checkpassword(data.PassWord)) {
+            setperr(true);
+          }
         }
       }
     } catch (err) {
