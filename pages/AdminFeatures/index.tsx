@@ -63,7 +63,6 @@ const AdminFeatures = ({ venues }:CardProps) => {
               <p className=" text-white text-xl mt-1  font-semibold">
                 {item.Name}
               </p>
-              
 
               <p className="ml-2 text-white mt-1  text-lg">
                 {isAvailable ? "AVAILABLE" : "NOT AVAILABLE"}
@@ -88,7 +87,11 @@ const AdminFeatures = ({ venues }:CardProps) => {
                 </button>
               </div>
 
-              {open === item.id ? <AdminEditForm id={item.id}></AdminEditForm> : ""}
+              {open === item.id ? (
+                <AdminEditForm id={item.id}></AdminEditForm>
+              ) : (
+                ""
+              )}
             </div>
           );
         })}

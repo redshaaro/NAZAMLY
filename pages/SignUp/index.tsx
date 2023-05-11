@@ -28,22 +28,32 @@ const SignUp = () => {
         Email: Email.trim(),
         PassWord: PassWord.trim(),
       };
-      setLoading(true);
 
-      if (checkempty(data.UserName, data.PassWord, data.Email)) {
-        const response = await fetch("https://nazamly.vercel.app/api/auth/signup", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(data),
-        });
+      if (
+        checkempty(data.UserName) ||
+        checkempty(data.Email) ||
+        checkempty(data.PassWord)
+      ) {
+        setLoading(false);
+        throw new Error("Sign up failed");
+      } else {
+        if (
+          checkemail(data.Email) &&
+          checkuser(data.UserName) &&
+          checkpassword(data.PassWord)
+        ) {
+          setLoading(true);
+          const response = await fetch(
+            "http://localhost:3000/api/auth/signup",
+            {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify(data),
+            }
+          );
 
-        if (response.ok) {
-          router.push("/SignIn"); // Redirect to login page if response is success
-          setLoading(false);
-        } else {
-          setLoading(false);
-          throw new Error("Sign up failed"); // Throw an error to be caught by the catch block
-        }
+      if (response.ok) {
+        router.push("/SignIn"); // Redirect to login page if response is success
       } else {
         setLoading(false);
         if (!checkemail(data.Email)) {
