@@ -5,10 +5,7 @@ import AdminEditForm from "../AdminEditForm";
 import { CardProps } from "@/utils/interfaces";
 
 export const getStaticProps = async () => {
-  const res = await fetch("http://localhost:3000/api/venues", {
-    method: "GET",
-  });
-  const venues = await res.json();
+  const venues = await prisma.venue.findMany()
 
   return {
     props: { venues },

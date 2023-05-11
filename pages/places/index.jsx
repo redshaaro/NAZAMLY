@@ -1,12 +1,10 @@
 import VenueCard from "@/Components/VenueCard";
 import { useState } from "react";
 import NavBar from "@/Components/NavBar";
+import prisma from "@/lib/prisma";
 
 export async function getStaticProps() {
-  const res = await fetch("http://localhost:3000/api/venues", {
-    method: "GET",
-  });
-  const venues = await res.json();
+  const venues = await prisma.venue.findMany()
   return {
     props: {
       venues,
