@@ -9,7 +9,7 @@ const EventId = () => {
   const [startDate, setStartDate] = useState(new Date());
   const router = useRouter();
   const { id } = router.query;
-  const fetchPlace = useSWR(`http://localhost:3000/api/venues/${id}`, fetcher);
+  const fetchPlace = useSWR(`${process.env.NEXT_PUBLIC_API_URL}/api/venues/${id}`, fetcher);
   if (fetchPlace.error) return <div>{fetchPlace.error}</div>;
 
   if (fetchPlace.isLoading)

@@ -4,7 +4,7 @@ import NavBar from "@/Components/NavBar";
 import { CardProps } from "@/utils/interfaces";
 
 export async function getStaticProps() {
-  const res = await fetch("http://localhost:3000/api/venues", {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/venues`, {
     method: "GET",
   });
   const venues = await res.json();
@@ -20,7 +20,7 @@ const Index = ({ venues }: CardProps) => {
   const [filtered, setFiltered] = useState<CardProps>();
   const filter = async (price, location) => {
     const res = await fetch(
-      `http://localhost:3000/api/venues/filter/?location=${location}&price=${price}$`,
+      `${process.env.NEXT_PUBLIC_API_URL}/api/venues/filter/?location=${location}&price=${price}$`,
       {
         method: "GET",
       }

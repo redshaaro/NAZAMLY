@@ -26,7 +26,7 @@ const AdminAddForm = () => {
 
       console.log(data);
 
-      await fetch("http://localhost/api/venues", {
+      await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/venues`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),

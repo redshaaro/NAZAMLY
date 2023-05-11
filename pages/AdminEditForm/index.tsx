@@ -18,7 +18,7 @@ const AdminEditForm = ({id}) => {
        
       console.log(data);
 
-      await fetch(`http://localhost/api/venues/${id}`, {
+      await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/venues/${id}`, {
         method: "PUT",
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data)
