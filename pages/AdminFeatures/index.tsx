@@ -4,16 +4,16 @@ import Link from "next/link";
 import AdminEditForm from "../AdminEditForm";
 import { CardProps } from "@/utils/interfaces";
 
-export const getStaticProps = async () => {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/venues`, {
-    method: "GET",
-  });
-  const venues = await res.json();
+// export const getStaticProps = async () => {
+//   const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/venues`, {
+//     method: "GET",
+//   });
+//   const venues = await res.json();
 
-  return {
-    props: { venues },
-  };
-};
+//   return {
+//     props: { venues },
+//   };
+// };
 
 const AdminFeatures = ({ venues }: CardProps) => {
   const [open, setOpen] = useState(null);
