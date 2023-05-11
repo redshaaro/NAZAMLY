@@ -11,6 +11,7 @@ type VenueProperties={
 export interface CardProps{
     length: any;
     venue:{
+        map(arg0: (place: any) => JSX.Element): import("react").ReactNode;
         Name:string,
         Image?:string,
         Description:string,
@@ -21,6 +22,7 @@ export interface CardProps{
         id:string
     },
     venues:{
+        map(arg0: (item: any) => JSX.Element): import("react").ReactNode;
         Name:string,
         Image?:string,
         Description:string,
