@@ -14,7 +14,7 @@ export async function getStaticProps() {
     },
   };
 }
-const Index = ( ) => {
+const Index = ({venues}:CardProps) => {
   const [price, setPrice] = useState("");
   const [location, setLocation] = useState("");
   const [filtered, setFiltered] = useState<CardProps>();
