@@ -4,16 +4,16 @@ import Link from "next/link";
 import AdminEditForm from "../AdminEditForm";
 import { CardProps } from "@/utils/interfaces";
 
-export const getStaticProps = async () => {
-  const res = await fetch(`/api/venues`, {
-    method: "GET",
-  });
-  const venues = await res.json();
+// export const getStaticProps = async () => {
+//   const res = await fetch(`/api/venues`, {
+//     method: "GET",
+//   });
+//   const venues = await res.json();
 
-  return {
-    props: { venues },
-  };
-};
+//   return {
+//     props: { venues },
+//   };
+// };
 
 const AdminFeatures = ({ venues }:CardProps) => {
   const [open, setOpen] = useState(null);
@@ -46,7 +46,7 @@ const AdminFeatures = ({ venues }:CardProps) => {
         </Link>
       </div>
       <div className="flex mt-[7rem] justify-around flex-wrap p-4  ">
-        {venues.map((item) => {
+        {/* {venues.map((item) => {
           const [isAvailable, setIsAvailable] = useState(item.Available);
           return (
             <div
@@ -91,7 +91,7 @@ const AdminFeatures = ({ venues }:CardProps) => {
               {open === item.id ? <AdminEditForm id={item.id}></AdminEditForm> : ""}
             </div>
           );
-        })}
+        })} */}
       </div>
     </>
   );
