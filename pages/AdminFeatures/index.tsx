@@ -15,7 +15,7 @@ export const getStaticProps = async () => {
   };
 };
 
-const AdminFeatures = ( ) => {
+const AdminFeatures = ({venues}:CardProps ) => {
   const [open, setOpen] = useState(null);
   const buttonHandler = async (action, id?) => {
     switch (action) {
