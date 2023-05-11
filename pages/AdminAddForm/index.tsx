@@ -26,7 +26,7 @@ const AdminAddForm = () => {
 
       console.log(data);
 
-      await fetch("https://nazamly.vercel.app/api/venues", {
+      await fetch("http://localhost/api/venues", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
