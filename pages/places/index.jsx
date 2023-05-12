@@ -4,7 +4,9 @@ import NavBar from "@/Components/NavBar";
 import prisma from "@/lib/prisma";
 
 export async function getStaticProps() {
-  const venues = await fetch("https://nazamly.vercel.app/api/venues",{method:"GET"})
+  const venues = await  prisma.venue.findMany({
+    where: { Available: true },
+  });
   return {
     props: {
       venues,
@@ -78,11 +80,11 @@ const Index = ({ venues }) => {
       </ul>
       <div className="flex justify-between items-center flex-wrap p-6 mt-3">
         <ul className="flex flex-col md:flex-row gap-5 justify-center">
-        {venuesToRender.map((venue) => (
-          <li key={venue.id}>
-            <VenueCard venue={venue}></VenueCard>
-          </li>
-        ))}
+          {venuesToRender.map((venue) => (
+            <li key={venue.id}>
+              <VenueCard venue={venue}></VenueCard>
+            </li>
+          ))}
         </ul>
       </div>
     </div>
