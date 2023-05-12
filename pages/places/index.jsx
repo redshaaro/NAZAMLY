@@ -4,12 +4,14 @@ import NavBar from "@/Components/NavBar";
 import prisma from "@/lib/prisma";
 
 export async function getStaticProps() {
-  const venues = await  prisma.venue.findMany({
+  let venues = await prisma.venue.findMany({
     where: { Available: true },
   });
+
   return {
     props: {
       venues,
+      revalidate: 10,
     },
   };
 }
