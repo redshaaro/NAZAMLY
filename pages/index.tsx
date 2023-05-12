@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <>
       <Hero></Hero>
-      <LowerHero></LowerHero>
+      {/* <LowerHero></LowerHero> */}
     </>
   );
 }
