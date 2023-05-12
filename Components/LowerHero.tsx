@@ -6,7 +6,7 @@ const LowerHero = () => {
   // const { ref: secondRef, inView: second } = useInView();
   // const { ref: thirdRef, inView: Third } = useInView();
   return (
-    <section suppressHydrationWarning id="hero-2" className="bg-gray-100">
+    <section   id="hero-2" className="bg-gray-100">
       <h1 className="text-center text-5xl font-bold  p-12 mb-5">
         <span>Welcome To Nazamly</span>{" "}
       </h1>
