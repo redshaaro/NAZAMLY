@@ -6,8 +6,8 @@ const Hero = () => {
   // const { ref: firstRef, inView: first } = useInView();
   return (
     <section id="hero-1" className=" h-[650px] relative">
-      <Navbar color={undefined}></Navbar>
-      <Image
+      <Navbar color="black"></Navbar>
+      {/* <Image
         src="https://s3.amazonaws.com/eventbrite-s3/marketing/landingpages/assets/photography/distribution-header-footer.jpg"
         className=" brightness-90 z-[-1] h-[700px] w-screen top-0 absolute"
         width={1200}
@@ -15,9 +15,9 @@ const Hero = () => {
         alt="nth"
         
         
-      />
+      /> */}
 
-      <h1 className="text-white text-5xl font-bold text-center mt-20 capitalize ">
+      <h1 className="text-white text-black text-5xl font-bold text-center mt-20 capitalize ">
         <span>Organize all your events in 1 place</span>
       </h1>
     </section>

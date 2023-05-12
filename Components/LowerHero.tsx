@@ -35,7 +35,7 @@ const LowerHero = () => {
         >
           Meet Our Favourite Customers
         </h1>
-        <ul className={`flex gap-20 justify-between p-10 flex-wrap`}>
+        {/* <ul className={`flex gap-20 justify-between p-10 flex-wrap`}>
           <li className={`p-5 `}>
             <Image src={"/icon-1.png"} width={100} height={50} alt={""}></Image>
           </li>
@@ -88,7 +88,7 @@ const LowerHero = () => {
           <li className="p-2">
             <Image src={"/icon-7.png"} width={100} height={50} alt={""}></Image>
           </li>
-        </ul>
+        </ul> */}
       </div>
     </section>
   );
