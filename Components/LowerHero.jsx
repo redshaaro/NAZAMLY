@@ -1,17 +1,17 @@
 import React from "react";
 import { useInView } from "react-intersection-observer";
-import img1 from "../assets/icon-1.png";
-import img2 from "../assets/icon-2.png";
-import Image3 from "../assets/icon-3.png";
-import img4 from "../assets/icon-4.png";
-import img5 from "../assets/icon-5.png";
-import img6 from "../assets/icon-6.png";
-import img7 from "../assets/icon-7.png";
-import img8 from "../assets/icon-8.png";
-import img9 from "../assets/icon-9.png";
-import img10 from "../assets/icon-10.png";
-import img11 from "../assets/icon-11.png";
-import img12 from "../assets/icon-12.png";
+import img1 from "../public/icon-1.png";
+import img2 from "../public/icon-2.png";
+import img3 from "../public/icon-3.png";
+import img4 from "../public/icon-4.png";
+import img5 from "../public/icon-5.png";
+import img6 from "../public/icon-6.png";
+import img7 from "../public/icon-7.png";
+import img8 from "../public/icon-8.png";
+import img9 from "../public/icon-9.png";
+import img10 from "../public/icon-10.png";
+import img11 from "../public/icon-11.png";
+import img12 from "../public/icon-12.png";
 // import Image from "next/Image";
 
 const LowerHero = () => {
