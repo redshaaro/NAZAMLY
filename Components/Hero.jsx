@@ -1,14 +1,14 @@
 import React from "react";
 import Navbar from "./NavBar";
  
-import img from "../assets/distribution-header-footer.jpg";
+import img from "../public/distribution-header-footer.jpg";
 // import { useInView } from "react-intersection-observer";
 const Hero = () => {
   // const { ref: firstRef, inView: first } = useInView();
   return (
     <section id="hero-1" className=" h-[650px] relative">
       <Navbar color="black"></Navbar>
-      <img
+      <Image
         src={img}
         className=" brightness-90 z-[-1] h-[700px] w-screen top-0 absolute"
         width={1200}

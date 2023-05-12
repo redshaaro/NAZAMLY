@@ -1,19 +1,19 @@
 import React from "react";
 import { useInView } from "react-intersection-observer";
-import img1 from "../assets/icon-1.png";
-import img2 from "../assets/icon-2.png";
-import img3 from "../assets/icon-3.png";
-import img4 from "../assets/icon-4.png";
-import img5 from "../assets/icon-5.png";
-import img6 from "../assets/icon-6.png";
-import img7 from "../assets/icon-7.png";
-import img8 from "../assets/icon-8.png";
-import img9 from "../assets/icon-9.png";
-import img10 from "../assets/icon-10.png";
-import img11 from "../assets/icon-11.png";
-import img12 from "../assets/icon-12.png";
+import Image1 from "../public/icon-1.png";
+import Image2 from "../public/icon-2.png";
+import Image3 from "../public/icon-3.png";
+import Image4 from "../public/icon-4.png";
+import Image5 from "../public/icon-5.png";
+import Image6 from "../public/icon-6.png";
+import Image7 from "../public/icon-7.png";
+import Image8 from "../public/icon-8.png";
+import Image9 from "../public/icon-9.png";
+import Image10 from "../public/icon-10.png";
+import Image11 from "../public/icon-11.png";
+import Image12 from "../public/icon-12.png";
+import Image from "next/image";
 
- 
 const LowerHero = () => {
   // const { ref: firstRef, inView: first } = useInView();
   // const { ref: secondRef, inView: second } = useInView();
@@ -50,41 +50,41 @@ const LowerHero = () => {
         </h1>
         <ul className={`flex gap-20 justify-between p-10 flex-wrap`}>
           <li className={`p-5 `}>
-            <img src={img1} width={100} height={50} alt={""}/> 
+            <Image src={Image1} width={100} height={50} alt={""} />
           </li>
           <li className="p-5">
-            <img src={img2} width={100} height={50} alt={""}/>
+            <Image src={Image2} width={100} height={50} alt={""} />
           </li>
 
           <li className="p-5">
-            <img src={img3} width={100} height={50} alt={""}/>
+            <Image src={Image3} width={100} height={50} alt={""} />
           </li>
           <li className="p-5">
-            <img src={img4} width={100} height={50} alt={""}/>
+            <Image src={Image4} width={100} height={50} alt={""} />
           </li>
           <li className="p-5">
-            <img src={img5} width={100} height={50} alt={""}/>
+            <Image src={Image5} width={100} height={50} alt={""} />
           </li>
           <li className="p-5">
-            <img src={img6} width={100} height={50} alt={""}/>
+            <Image src={Image6} width={100} height={50} alt={""} />
           </li>
           <li className="p-5">
-            <img src={img7} width={100} height={50} alt={""}/>
+            <Image src={Image7} width={100} height={50} alt={""} />
           </li>
           <li className="p-5">
-            <img src={img8} width={100} height={50} alt={""}/>
+            <Image src={Image8} width={100} height={50} alt={""} />
           </li>
           <li className="p-2">
-            <img src={img9} width={100} height={50} alt={""}/>
+            <Image src={Image9} width={100} height={50} alt={""} />
           </li>
           <li className="p-2">
-            <img src={img10} width={100} height={50} alt={""}/>
+            <Image src={Image10} width={100} height={50} alt={""} />
           </li>
           <li className="p-2">
-            <img src={img11} width={100} height={50} alt={""}/>
+            <Image src={Image11} width={100} height={50} alt={""} />
           </li>
           <li className="p-2">
-            <img src={img12} width={100} height={50} alt={""}/>
+            <Image src={Image12} width={100} height={50} alt={""} />
           </li>
         </ul>
       </div>
