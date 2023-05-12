@@ -12,8 +12,7 @@ const NavBar = ({ color }) => {
       setUserState(JSON.parse(userData));
     }
   }, []);
-
-  console.log(user);
+ 
   const logout = () => {
     localStorage.removeItem("user");
     router.reload();

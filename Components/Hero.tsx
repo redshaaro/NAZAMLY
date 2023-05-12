@@ -7,19 +7,18 @@ const Hero = () => {
   return (
     <section id="hero-1" className=" h-[650px] relative">
       <Navbar color={undefined}></Navbar>
-      <img
-      
+      <Image
         src="https://s3.amazonaws.com/eventbrite-s3/marketing/landingpages/assets/photography/distribution-header-footer.jpg"
         className=" brightness-90 z-[-2] h-[700px] w-screen top-0 absolute"
         width={1200}
         height={800}
-        alt=""
+        alt="nth"
+        loading="lazy"
+        decoding="async"
+        
       />
 
-      <h1
-       
-        className="text-white text-5xl font-bold text-center mt-20 capitalize "
-      >
+      <h1 className="text-white text-5xl font-bold text-center mt-20 capitalize ">
         <span>Organize all your events in 1 place</span>
       </h1>
     </section>
