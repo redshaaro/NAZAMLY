@@ -9,12 +9,11 @@ const Hero = () => {
       <Navbar color={undefined}></Navbar>
       <Image
         src="https://s3.amazonaws.com/eventbrite-s3/marketing/landingpages/assets/photography/distribution-header-footer.jpg"
-        className=" brightness-90 z-[-2] h-[700px] w-screen top-0 absolute"
+        className=" brightness-90 z-[-1] h-[700px] w-screen top-0 absolute"
         width={1200}
         height={800}
         alt="nth"
-        loading="lazy"
-        decoding="async"
+        
         
       />
 
