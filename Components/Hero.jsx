@@ -1,7 +1,7 @@
 import React from "react";
 import Navbar from "./NavBar";
  
-import img from "../public/distribution-header-footer.jpg";
+import img from "../assets/distribution-header-footer.jpg";
 // import Image from 'next/image'
 // import { useInView } from "react-intersection-observer";
 const Hero = () => {
