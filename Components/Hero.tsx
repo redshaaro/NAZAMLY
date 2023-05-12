@@ -1,9 +1,9 @@
 import React from "react";
 import Navbar from "./NavBar";
 import Image from "next/image";
-import { useInView } from "react-intersection-observer";
+// import { useInView } from "react-intersection-observer";
 const Hero = () => {
-  const { ref: firstRef, inView: first } = useInView();
+  // const { ref: firstRef, inView: first } = useInView();
   return (
     <section id="hero-1" className=" h-[650px] relative">
       <Navbar color={undefined}></Navbar>
@@ -16,7 +16,7 @@ const Hero = () => {
       />
 
       <h1
-        ref={firstRef}
+        // ref={firstRef}
         className="text-white text-5xl font-bold text-center mt-20 capitalize "
       >
         <span>Organize all your events in 1 place</span>
