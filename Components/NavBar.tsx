@@ -34,7 +34,7 @@ const NavBar = ({ color }) => {
         </aside>
       </Link>
       <ul
-        className={`hidden  md:flex items-center gap-5 mr-5 ${
+        className={` flex items-center gap-5 mr-5 ${
           color ? "text-black" : "text-white"
         } text-lg`}
       >
