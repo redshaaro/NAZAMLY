@@ -7,7 +7,7 @@ const Hero = () => {
   return (
     <section id="hero-1" className=" h-[650px] relative">
       <Navbar color={undefined}></Navbar>
-      <Image
+      <img
       
         src="https://s3.amazonaws.com/eventbrite-s3/marketing/landingpages/assets/photography/distribution-header-footer.jpg"
         className=" brightness-90 z-[-2] h-[700px] w-screen top-0 absolute"
