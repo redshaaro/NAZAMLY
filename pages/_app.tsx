@@ -8,7 +8,7 @@ export default function App({ Component, pageProps }) {
   return (
     <>
       <AppContextProvider>
-        <NavBar color={undefined}></NavBar>
+       
         
           <Component {...pageProps} />
        
