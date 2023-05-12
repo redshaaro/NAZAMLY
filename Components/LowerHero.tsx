@@ -1,6 +1,6 @@
 import React from "react";
 import { useInView } from "react-intersection-observer";
-import Image from "next/Image";
+import Image from "next/image";
 const LowerHero = () => {
   // const { ref: firstRef, inView: first } = useInView();
   // const { ref: secondRef, inView: second } = useInView();
