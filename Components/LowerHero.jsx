@@ -20,7 +20,7 @@ const LowerHero = () => {
   // const { ref: secondRef, inView: second } = useInView();
   // const { ref: thirdRef, inView: Third } = useInView();
   return (
-    <section id="hero-2" className="bg-gray-100">
+    <section id="hero-2" className="bg-gray-100  h-full">
       <h1 className="text-center text-5xl font-bold  p-12 mb-5">
         <span>Welcome To Nazamly</span>{" "}
       </h1>
@@ -41,7 +41,7 @@ const LowerHero = () => {
           </span>
         </p>
       </div>
-      <div className="bg-gray-950 h-full p-5">
+      <div className="bg-gray-950 p-5">
         <h1
           className={`text-center text-white font-bold text-4xl
              

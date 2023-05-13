@@ -11,12 +11,10 @@ const Hero = () => {
     <section id="hero-1" className=" h-[650px] relative">
       <Navbar color="black"></Navbar>
 
-      <Image
+      <img
       loading="lazy"
         src={img}
         className=" brightness-90 z-[-1] h-[700px] w-screen top-0 absolute"
-        width={1200}
-        height={800}
         alt="nth"
       />
 
