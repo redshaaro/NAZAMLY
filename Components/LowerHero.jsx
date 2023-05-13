@@ -13,7 +13,7 @@ import img8 from "../public/icon-8.png";
 import img9 from "../public/icon-9.png";
 import img10 from "../public/icon-10.png";
 import img11 from "../public/icon-11.png";
-import img12 from "/icon-12.png";
+import img12 from "../public/icon-12.png";
 
 const LowerHero = () => {
   // const { ref: firstRef, inView: first } = useInView();
