@@ -68,7 +68,7 @@ const NavBar = ({ color }) => {
         {!user ? (
           <li>
             <Link href={"/SignUp"}>
-              <h1 className="font-semibold text-white p-4 bg-blue-950 rounded-full">
+              <h1 className="font-semibold text-white p-3 bg-blue-950 rounded-full">
                 JOIN US NOW!
               </h1>
             </Link>
@@ -82,7 +82,7 @@ const NavBar = ({ color }) => {
               onClick={() => {
                 logout();
               }}
-              className="font-semibold text-white p-4 bg-blue-950 rounded-full"
+              className="font-semibold text-white p-3 bg-blue-950 rounded-full"
             >
               Logout
             </button>

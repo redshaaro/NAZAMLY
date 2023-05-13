@@ -4,7 +4,6 @@ import { CardProps } from '@/utils/interfaces'
 const VenueCard = ({venue}:CardProps) => {
   return (
     <div className='w-[300px] h-full bg-black rounded-xl'>
-  
         <Link href={`places/${venue.id}`}>
         <img src={venue.Image} alt="a photo for the event" className='rounded-lg' />
         </Link>
