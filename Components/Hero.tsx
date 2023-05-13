@@ -9,7 +9,7 @@ const Hero = () => {
   // const { ref: firstRef, inView: first } = useInView();
   return (
     <section id="hero-1" className=" h-[650px] relative">
-      <Navbar color="black"></Navbar>
+      <Navbar color={""}></Navbar>
 
       <img
       loading="lazy"

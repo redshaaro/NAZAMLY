@@ -41,7 +41,7 @@ const AdminFeatures = ({ venues }: CardProps) => {
       <h1 className="text-center text-4xl mt-4 ">Welcome Admin</h1>
       <div className="relative">
         <Link
-          className="bg-purple-900 absolute right-0 top-0 text-white p-4 m-8 rounded text-[1.4rem] "
+          className="bg-purple-900  absolute right-0 top-0 text-white p-4 m-8 rounded text-[1.4rem] "
           href="/AdminAddForm"
         >
           Add Venue

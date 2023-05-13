@@ -19,19 +19,7 @@ margin:0;
     background: #888;
 
   }
-
-  .blue__gradient {
-    background: radial-gradient(circle, rgba(188, 165, 255, 0) 0%, #20dbd4 100%);
-    filter:
-     blur(100px);
-  }
-  .purple__gradient {
-    background: radial-gradient(circle, rgba(188, 165, 255, 0) 0%, #3f51b6 100%);
-    filter:
-    contrast(1.3) 
-    blur(100px);
     
-  }
   .fade-in {
     animation: fadeIn ease 3s;
     -webkit-animation: fadeIn ease 3s;

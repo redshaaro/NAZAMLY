@@ -19,7 +19,7 @@ const NavBar = ({ color }) => {
   };
   return (
     <div
-      className={`flex items-center justify-between p-4 z-10 bg-transparent border-b-[0.1px] ${
+      className={`flex items-center  justify-between p-4 z-10 bg-transparent border-b-[0.1px] ${
         color ? "border-gray-200" : "border-gray-700"
       }`}
     >
@@ -27,7 +27,7 @@ const NavBar = ({ color }) => {
         <aside
           className={`font-bold text-2xl bg-gradient-to-b ${
             color ? "from-black to-black" : "from-white to-blue-500"
-          }  text-transparent bg-clip-text pl-2`}
+          }  text-transparent bg-clip-text pl-2 `}
         >
           NAZAMLY
         </aside>

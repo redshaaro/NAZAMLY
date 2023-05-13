@@ -24,11 +24,10 @@ const LowerHero = () => {
       <h1 className="text-center text-5xl font-bold  p-12 mb-5">
         <span>Welcome To Nazamly</span>{" "}
       </h1>
-      <div className="bg-lowerhero brightness-75 bg-no-repeat bg-cover h-screen relative">
+      <div className="bg-lowerhero brightness-75 bg-no-repeat bg-fill h-[800px] relative">
         <p className="text-5xl p-7 left-[10%] top-[30%] text-white font-bold absolute">
           <span
             className={`
-              
           text-[21px] mt-[1rem] leading-[36px] tracking-[3px]`}
           >
             Our Vision:{""}
