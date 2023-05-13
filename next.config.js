@@ -1,15 +1,17 @@
 const nextConfig = {
   reactStrictMode: false,
-  images:{
-    remotePatterns:[
-      {
-        protocol: 'https',
-                hostname: '**',
-                port: '',
-                pathname: '**',
-      }
-    ]
-  }
-}
+  images: {
+    loader: "cloudinary",
 
-module.exports = nextConfig
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "**",
+        port: "",
+        pathname: "**",
+      },
+    ],
+  },
+};
+
+module.exports = nextConfig;
