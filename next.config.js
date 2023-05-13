@@ -1,7 +1,7 @@
 const nextConfig = {
   reactStrictMode: false,
   images: {
-    loader: "cloudinary",
+    
 
     remotePatterns: [
       {

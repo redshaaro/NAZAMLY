@@ -12,6 +12,7 @@ const Hero = () => {
       <Navbar color="black"></Navbar>
 
       <Image
+      loading="lazy"
         src={img}
         className=" brightness-90 z-[-1] h-[700px] w-screen top-0 absolute"
         width={1200}
