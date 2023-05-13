@@ -13,7 +13,7 @@ const Hero = () => {
 
       <img
       loading="lazy"
-        src={img}
+        src={img.src}
         className=" brightness-90 z-[-1] h-[700px] w-screen top-0 absolute"
         alt="nth"
       />
