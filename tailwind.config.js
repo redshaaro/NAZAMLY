@@ -1,9 +1,11 @@
 module.exports = {
-  content: [
+ 
+    important: true,
+
+  purge: [
     './pages/**/*.{js,ts,jsx,tsx}',
     './components/**/*.{js,ts,jsx,tsx}',
     './app/**/*.{js,ts,jsx,tsx}',
-    './node_modules/tw-elements/dist/js/**/*.{js,ts,jsx,tsx}',
   ],
   
   theme: {
@@ -14,6 +16,9 @@ module.exports = {
        'signinbg': "url('/background16.jpg')"
       },
     },
+  },
+  variants: {
+    extend: {},
   },
   plugins: [
     require('tw-elements/dist/plugin')

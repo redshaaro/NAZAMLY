@@ -1,8 +1,11 @@
+import Hero from '@/Components/Hero'
 import React from 'react'
 
 const search = () => {
   return (
-    <div className=" text-white bg-lowerhero h-screen">search</div>
+    <div className="  h-screen">
+      <Hero></Hero>
+    </div>
   )
 }
 
