@@ -1,17 +1,32 @@
-
+import NavBar from "@/Components/NavBar";
+import img from "../public/distribution-header-footer.jpg";
+import img1 from "../public/icon-1.png";
+import img2 from "../public/icon-2.png";
+import img3 from "../public/icon-3.png";
+import img4 from "../public/icon-4.png";
+import img5 from "../public/icon-5.png";
+import img6 from "../public/icon-6.png";
+import img7 from "../public/icon-7.png";
+import img8 from "../public/icon-8.png";
+import img9 from "../public/icon-9.png";
+import img10 from "../public/icon-10.png";
+import img11 from "../public/icon-11.png";
+import img12 from "../public/icon-12.png";
+import Image from "next/image"
 export default function Home() {
   return (
    
     <main>
+      <NavBar color={"black"}></NavBar>
        <div >
      <img
-        src="https://www.nu-techassociates.co.uk/wp-content/uploads/2015/04/DSC0210.jpg"
-        className=" brightness-90 -z-10 h-[700px] w-screen "
+        src={img.src}
+        className=" brightness-90 -z-10 h-[700px] w-screen relative"
         alt="nth"
       />
-       {/* <h1 className="text-white   text-5xl font-bold text-center mt-20 capitalize ">
+       <h1 className="text-white  z-0 text-5xl font-bold text-center mt-20 capitalize absolute">
         <span>Organize all your events in 1 place</span>
-      </h1> */}
+      </h1>
       <div className="">
       <h1 className="text-center text-5xl font-bold  p-12 mb-5">
         <span>Welcome To Nazamly</span>{" "}
@@ -33,7 +48,54 @@ export default function Home() {
           </span>
         </p>
       </div>
-   
+      <div className="bg-gray-950 p-5">
+        <h1
+          className={`text-center text-white font-bold text-4xl
+             
+           `}
+        >
+          Meet Our Favourite Customers
+        </h1>
+        <ul className={`flex gap-20 justify-between p-10 flex-wrap`}>
+          <li className={`p-5 `}>
+            <Image loading="lazy" src={img1} width={100} height={50} alt={""} />
+          </li>
+          <li className="p-5">
+            <Image loading="lazy" src={img2} width={100} height={50} alt={""} />
+          </li>
+
+          <li className="p-5">
+            <Image loading="lazy" src={img3} width={100} height={50} alt={""} />
+          </li>
+          <li className="p-5">
+            <Image loading="lazy" src={img4} width={100} height={50} alt={""} />
+          </li>
+          <li className="p-5">
+            <Image loading="lazy" src={img5} width={100} height={50} alt={""} />
+          </li>
+          <li className="p-5">
+            <Image loading="lazy" src={img6} width={100} height={50} alt={""} />
+          </li>
+          <li className="p-5">
+            <Image loading="lazy" src={img7} width={100} height={50} alt={""} />
+          </li>
+          <li className="p-5">
+            <Image loading="lazy" src={img8} width={100} height={50} alt={""} />
+          </li>
+          <li className="p-2">
+            <Image loading="lazy" src={img9} width={100} height={50} alt={""} />
+          </li>
+          <li className="p-2">
+            <Image loading="lazy" src={img10} width={100} height={50} alt={""} />
+          </li>
+          <li className="p-2">
+            <Image loading="lazy" src={img11} width={100} height={50} alt={""} />
+          </li>
+          <li className="p-2">
+            <Image loading="lazy" src={img12} width={100} height={50} alt={""} />
+          </li>
+        </ul>
+      </div>
       </div>
       </main>
     
