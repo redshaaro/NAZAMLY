@@ -13,26 +13,36 @@ import img10 from "../public/icon-10.png";
 import img11 from "../public/icon-11.png";
 import img12 from "../public/icon-12.png";
 import Image from "next/image"
+import { useInView } from "react-intersection-observer";
 export default function Home() {
+   const { ref: firstRef, inView: first } = useInView({
+    triggerOnce:true
+   });
+   const { ref: secondRef, inView: second } = useInView({
+    triggerOnce:true
+   });
+   const { ref: thirdRef, inView: third } = useInView({
+    triggerOnce:true
+   });
   return (
    
     <main>
       <NavBar color={"black"}></NavBar>
-       <div >
+       <div>
      <img
         src={img.src}
-        className=" brightness-90 -z-10 h-[700px] w-screen relative"
+        className=" brightness-90 -z-10 h-[700px] w-screen "
         alt="nth"
       />
-       <h1 className="text-white  z-0 text-5xl font-bold text-center mt-20 capitalize absolute">
-        <span>Organize all your events in 1 place</span>
+       <h1 ref={firstRef} className="text-white  z-1 text-5xl font-bold text-center mt-20 top-[20%] left-[27%] capitalize absolute">
+        <span className={`${first ? "fade-in":""}`} >Organize all your events in 1 place</span>
       </h1>
       <div className="">
-      <h1 className="text-center text-5xl font-bold  p-12 mb-5">
-        <span>Welcome To Nazamly</span>{" "}
+      <h1 ref={secondRef} className="text-center text-5xl font-bold  p-12 mb-5">
+        <span className={`${second ? "fade-in":""}`}>Welcome To Nazamly</span>{" "}
       </h1>
       </div>
-      <div className="bg-lowerhero brightness-75 bg-no-repeat bg-fill h-[800px] relative">
+      <div className="bg-lowerhero  bg-no-repeat bg-fill h-[800px] relative">
         <p className="text-5xl p-7 left-[10%] top-[30%] text-white font-bold absolute">
           <span
             className={`
@@ -48,15 +58,13 @@ export default function Home() {
           </span>
         </p>
       </div>
-      <div className="bg-gray-950 p-5">
+      <div ref={thirdRef} className="bg-gray-950 p-5">
         <h1
-          className={`text-center text-white font-bold text-4xl
-             
-           `}
+          className={`text-center text-white font-bold text-4xl `}
         >
           Meet Our Favourite Customers
         </h1>
-        <ul className={`flex gap-20 justify-between p-10 flex-wrap`}>
+        <ul className={`flex gap-20 justify-between p-10 flex-wrap ${third ? "fade-in":""}`}>
           <li className={`p-5 `}>
             <Image loading="lazy" src={img1} width={100} height={50} alt={""} />
           </li>

@@ -77,8 +77,8 @@ const NavBar = ({ color }) => {
             </li>
           </>
         ) : (
-          <li>
-            <button onClick={logout}>Logout</button>
+          <li className="font-semibold text-white p-3 bg-blue-950 rounded-full">
+            <button  onClick={logout}>Logout</button>
           </li>
         )}
       </ul>
