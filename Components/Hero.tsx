@@ -12,7 +12,7 @@ const Hero = () => {
       <Navbar color={""}></Navbar>
 
       <img
-        src={"https://www.nu-techassociates.co.uk/wp-content/uploads/2015/04/DSC0210.jpg"}
+        src="https://www.nu-techassociates.co.uk/wp-content/uploads/2015/04/DSC0210.jpg"
         className=" brightness-90 -z-10 h-[700px] w-screen top-0 absolute"
         alt="nth"
       />
