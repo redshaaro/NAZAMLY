@@ -58,7 +58,7 @@ export default function Home() {
           </span>
         </p>
       </div>
-      <div ref={thirdRef} className="bg-gray-950 p-5">
+      <div id="customers" ref={thirdRef} className="bg-gray-950 p-5">
         <h1
           className={`text-center text-white font-bold text-4xl `}
         >
